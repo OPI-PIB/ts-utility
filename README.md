@@ -1,6 +1,6 @@
-# @opi-pib/ts-utility
+# @opi_pib/ts-utility
 
--   [@opi-pib/ts-utility](#frontendts-utility)
+-   [@opi_pib/ts-utility](#frontendts-utility)
     -   [Assert](#assert)
         -   [Usage](#usage)
             -   [TypeScript](#typescript)

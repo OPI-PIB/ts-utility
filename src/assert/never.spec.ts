@@ -7,6 +7,6 @@ describe('never()', () => {
 	});
 
 	it('complains when given an empty code.', () => {
-		expect(() => never(true, '')).toThrowError(/code/gi);
+		expect(() => never(true, '')).toThrow(/code/gi);
 	});
 });

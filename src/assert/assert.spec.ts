@@ -7,6 +7,6 @@ describe('assert()', () => {
 	});
 
 	it('complains when given an empty code.', () => {
-		expect(() => assert(false, '')).toThrowError(/code/gi);
+		expect(() => assert(false, '')).toThrow(/code/gi);
 	});
 });
