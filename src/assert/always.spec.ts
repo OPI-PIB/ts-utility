@@ -7,6 +7,6 @@ describe('always()', () => {
 	});
 
 	it('complains when given an empty code.', () => {
-		expect(() => always(false, '')).toThrowError(/code/gi);
+		expect(() => always(false, '')).toThrow(/code/gi);
 	});
 });
