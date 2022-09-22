@@ -11,7 +11,7 @@ export function isUrl(value: unknown): value is string {
 	if (isOfType(OfType.string, value)) {
 		try {
 			url = new URL(value);
-		} catch (_) {
+		} catch {
 			return false;
 		}
 	}

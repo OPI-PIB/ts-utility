@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars, no-shadow */
 export enum OfType {
 	date = 'date',
 	boolean = 'boolean',

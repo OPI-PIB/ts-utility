@@ -22,6 +22,13 @@ class TestedEntity extends Entity<TestedEntityProps> {
 }
 
 describe('Entity', () => {
+	it('should props be frozen', () => {
+		const id = Id.create('123');
+		const a = TestedEntity.create({ id, value: 'example' });
+
+		expect(Object.isFrozen((a as any).props)).toBe(true);
+	});
+
 	it('should equals by reference', () => {
 		const id = Id.create('123');
 		const a = TestedEntity.create({ id, value: 'example' });

@@ -47,6 +47,12 @@ class TestMulti extends ValueObject<TestMultiProps> {
 }
 
 describe('ValueObject', () => {
+	it('should props be frozen', () => {
+		const a = TestedValueObject.create('name', 'cityName');
+
+		expect(Object.isFrozen((a as any).props)).toBe(true);
+	});
+
 	it('should equals by reference', () => {
 		const a = TestedValueObject.create('name', 'cityName');
 		const b = a;

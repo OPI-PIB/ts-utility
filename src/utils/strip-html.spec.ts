@@ -2,7 +2,7 @@ import { stripHtml } from './strip-html';
 
 describe('stripHtml', () => {
 	it('number', () => {
-		expect(() => stripHtml(0 as any)).toThrow();
+		expect(() => stripHtml(0 as any)).toThrow('Provided value is not a string');
 	});
 
 	it('object', () => {
