@@ -7,11 +7,11 @@ import { OfType } from '../logic/type-of';
  */
 export function assert(condition: boolean, code: string): asserts condition {
 	if (!isOfType(OfType.boolean, condition)) {
-		throw new TypeError('Argument \'condition\' must be a boolean.');
+		throw new TypeError('Argument "condition" must be a boolean.');
 	}
 
-	if (!isDefined(code) || !isOfType(OfType.string, code) || (isOfType(OfType.string, code) && code.length < 1)) {
-		throw new TypeError('Argument \'code\' must be provided.');
+	if (!isDefined(code) || !isOfType(OfType.string, code) || (isOfType(OfType.string, code) && code.length === 0)) {
+		throw new TypeError('Argument "code" must be provided.');
 	}
 
 	if (condition === false) {
