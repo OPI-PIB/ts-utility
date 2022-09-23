@@ -60,7 +60,6 @@
 	},
 	"dependencies": {
 		"ramda": "^0.28.0",
-		"randexp": "^0.5.3",
 		"typescript": "~4.8.3"
 	}
 }
