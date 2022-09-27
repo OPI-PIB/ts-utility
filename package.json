@@ -1,6 +1,6 @@
 {
 	"name": "@opi_pib/ts-utility",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Typescript utility",
 	"scripts": {
 		"package:build": "npm-run-all clean compile",
@@ -60,6 +60,6 @@
 	},
 	"dependencies": {
 		"ramda": "^0.28.0",
-		"typescript": "~4.7.2"
+		"typescript": "^4.8.3"
 	}
 }
