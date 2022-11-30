@@ -5,14 +5,7 @@
         -   [Usage](#usage)
             -   [TypeScript](#typescript)
     -   [Logic](#logic)
-        -   [isDefined](#isdefined)
-        -   [isFunction](#isfunction)
-        -   [isInstanceOf](#isinstanceof)
-        -   [isObject](#isobject)
-        -   [isPromise](#ispromise)
-        -   [isUrl](#isurl)
-        -   [typeOf](#typeof)
-        -   [isOfType](#isoftype)
+        -   [Is](#is)
     -   [Models](#models)
         -   [Entity](#entity)
         -   [Value object](#value-object)
@@ -66,84 +59,83 @@ const y = x.toUpperCase(); // TypeScript knows that x must be a string, your IDE
 
 ## Logic
 
-### isDefined
+### Is
 
-Checks if value exists (is not null or undefined)
+Static methods of this class will check type of provided value
+
+### Is.defined
 
 ```typescript
-isDefined("123"); // true
-isDefined(""); // true
-isDefined(0); // true
-isDefined(null); // false
-isDefined(undefined); // false
+Is.defined("123"); // true
+Is.defined(null); // false
+Is.defined(undefined); // false
 ```
 
-### isFunction
+### Is.function
 
 Checks if value is function
 
 ```typescript
-isFunction(() => {}); // true
-isFunction(""); // false
-isFunction(new Promise(() => "")); // false
+Is.function(() => {}); // true
+Is.function(""); // false
+Is.function(new Promise(() => "")); // false
 ```
 
-### isInstanceOf
+### Is.instanceOf
 
 Checks if value is instance of value
 
 ```typescript
 class TestClass {}
-isInstanceOf(TestClass, new TestClass()); // true
-isInstanceOf(TestClass)(new TestClass()); // true
-isInstanceOf(TestClass, 1); // false
+Is.InstanceOf(TestClass, new TestClass()); // true
+Is.InstanceOf(TestClass)(new TestClass()); // true
+Is.InstanceOf(TestClass, 1); // false
 ```
 
-### isObject
+### Is.object
 
 Checks if value is object
 
 ```typescript
-isObject({}); // true
-isObject([]); // false
-isObject(() => {}); // false
-isObject(new Promise(() => "")); // false
+Is.object({}); // true
+Is.object([]); // false
+Is.object(() => {}); // false
+Is.object(new Promise(() => "")); // false
 ```
 
-### isPromise
+### Is.promise
 
 Checks if value is promise
 
 ```typescript
-isPromise({}); // false
-isPromise(new Promise(() => "")); // true
+Is.promise({}); // false
+Is.promise(new Promise(() => "")); // true
 ```
 
-### isUrl
+### Is.url
 
 Checks if value is valid url
 
 ```typescript
-isUrl("www.google.com"); // false
-isUrl("https://google.com"); // true
+Is.url("www.google.com"); // false
+Is.url("https://google.com"); // true
 ```
 
-### typeOf
-
-Return type of provided value
-
-```typescript
-typeOf(new Date()); // OfType.date
-typeOf(true); // OfType.boolean
-```
-
-### isOfType
+### Other types
 
 Checks if provided value is of provided type
 
 ```typescript
-isOfType(OfType.date, new Date()); // true
-isOfType(OfType.number, 0); // true
+Is.date(new Date()); // true
+Is.boolean(true); // true
+Is.string(""); // true
+Is.null(null); // true
+Is.regexp(/someRegularExpression/i); // true
+Is.regexp(new RegExp("someRegularExpression", "i")); // true
+Is.array([]); // true
+Is.number(0); // true
+Is.number(NaN); // true
+Is.number(Infinity); // true
 ```
 
 ## Models

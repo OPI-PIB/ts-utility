@@ -1,5 +1,5 @@
+import { Is } from '../../logic/is';
 import { ValueObject } from '../value-object/value-object';
-import { isDefined } from '../../logic/is-defined';
 
 export interface EntityProps {
 	id: ValueObject<any>;
@@ -19,7 +19,7 @@ export abstract class Entity<T extends EntityProps> {
 	}
 
 	equals(object: Entity<T>): boolean {
-		if (!isDefined(object)) {
+		if (!Is.defined(object)) {
 			return false;
 		}
 

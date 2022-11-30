@@ -1,13 +1,6 @@
 export { always } from './assert/always';
 export { never } from './assert/never';
-export * from './logic/is-defined';
-export * from './logic/is-function';
-export * from './logic/is-instance-of';
-export * from './logic/is-object';
-export * from './logic/is-promise';
-export * from './logic/is-url';
-export * from './logic/is-of-type';
-export * from './logic/type-of';
+export * from './logic/is';
 export * from './models/value-object/value-object';
 export * from './models/entity/entity';
 export * from './types/maybe';

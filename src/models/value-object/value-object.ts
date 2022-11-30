@@ -1,6 +1,6 @@
 import { equals } from 'ramda';
 
-import { isDefined } from '../../logic/is-defined';
+import { Is } from '../../logic/is';
 
 export interface ValueObjectProps {
 	[index: string]: any;
@@ -19,7 +19,7 @@ export abstract class ValueObject<T extends ValueObjectProps> {
 	}
 
 	equals(object?: ValueObject<T>): boolean {
-		if (!isDefined(object)) {
+		if (!Is.defined(object)) {
 			return false;
 		}
 
