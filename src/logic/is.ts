@@ -41,7 +41,7 @@ export class Is {
 		return isOfType(OfType.null, value);
 	}
 
-	static defined<T>(value: unknown): value is T {
+	static defined(value: unknown): boolean {
 		return value !== undefined && value !== null;
 	}
 
