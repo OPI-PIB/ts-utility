@@ -1,18 +1,24 @@
 # @opi_pib/ts-utility
 
--   [@opi_pib/ts-utility](#frontendts-utility)
-    -   [Assert](#assert)
-        -   [Usage](#usage)
-            -   [TypeScript](#typescript)
-    -   [Logic](#logic)
-        -   [Is](#is)
-    -   [Models](#models)
-        -   [Entity](#entity)
-        -   [Value object](#value-object)
-    -   [Types](#types)
-        -   [Maybe<T>](#maybet)
-    -   [Utils](#utils)
-        -   [stripHtml](#striphtml)
+-   [Install](#install)
+-   [Assert](#assert)
+    -   [Usage](#usage)
+        -   [TypeScript](#typescript)
+-   [Logic](#logic)
+    -   [Is](#is)
+-   [Models](#models)
+    -   [Entity](#entity)
+    -   [Value object](#value-object)
+-   [Types](#types)
+    -   [Maybe<T>](#maybet)
+-   [Utils](#utils)
+    -   [stripHtml](#striphtml)
+
+## Install
+
+```
+npm install @opi_pib/ts-utility
+```
 
 ## Assert
 
