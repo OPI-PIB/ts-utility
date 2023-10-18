@@ -1,6 +1,6 @@
 {
 	"name": "@opi_pib/ts-utility",
-	"version": "1.1.8",
+	"version": "1.1.9",
 	"description": "Typescript utility",
 	"scripts": {
 		"build": "npm-run-all clean compile",
@@ -42,10 +42,10 @@
 	"author": "Dawid Lubowiecki",
 	"license": "MIT",
 	"devDependencies": {
-		"@opi_pib/eslint-config-base": "^1.0.11",
+		"@opi_pib/eslint-config-base": "^1.0.12",
 		"@stryker-mutator/core": "^7.3.0",
 		"@stryker-mutator/jest-runner": "^7.3.0",
-		"@types/jest": "^29.5.5",
+		"@types/jest": "^29.5.6",
 		"@types/node": "^20.8.6",
 		"@types/ramda": "^0.29.6",
 		"@typescript-eslint/eslint-plugin": "^6.8.0",
