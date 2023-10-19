@@ -11,7 +11,7 @@ export function stripHtml(value: string): string {
 	try {
 		result = new DOMParser().parseFromString(value, 'text/html').body.textContent || result;
 	} catch {
-		throw new Error('Provided value can\'t be parsed');
+		throw new Error("Provided value can't be parsed");
 	}
 
 	return result;
