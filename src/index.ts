@@ -5,3 +5,4 @@ export * from './models/value-object/value-object';
 export * from './models/entity/entity';
 export * from './types/maybe';
 export * from './utils/strip-html';
+export * from './utils/smart-string';
