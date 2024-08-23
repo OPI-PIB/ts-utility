@@ -3,7 +3,7 @@ import { assert } from './assert';
 describe('assert()', () => {
 	it('evaluates booleans', () => {
 		expect(() => assert(true, 'code')).not.toThrow();
-		expect(() => assert(false, 'code')).toThrow('Client Error: code');
+		expect(() => assert(false, 'code')).toThrow('code');
 	});
 
 	it('complains when wrong condition is provided', () => {

@@ -13,6 +13,6 @@ export function assert(condition: boolean, code: string): asserts condition {
 	}
 
 	if (condition === false) {
-		throw new Error(`Client Error: ${code}`);
+		throw new Error(code, { cause: 'Client error' });
 	}
 }
