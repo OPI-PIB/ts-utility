@@ -63,7 +63,7 @@ export class Is {
 		return url instanceof URL && (url.protocol === 'http:' || url.protocol === 'https:');
 	}
 
-	static instanceOf<T>(className: Newable<T>, value: unknown) {
+	static instanceOf<T>(className: Newable<T>, value: unknown): value is T {
 		return value instanceof className;
 	}
 }
