@@ -51,10 +51,7 @@ never(1 < 0); // ok
 function always() are typed to assert that the condition you pass them are true, which gives you certainty that your variable is of a given type at runtime.
 
 ```typescript
-export declare function always(
-	condition: boolean,
-	code: string
-): asserts condition;
+export declare function always(condition: boolean, code: string): asserts condition;
 ```
 
 ```typescript
@@ -94,7 +91,6 @@ Checks if value is instance of value
 ```typescript
 class TestClass {}
 Is.InstanceOf(TestClass, new TestClass()); // true
-Is.InstanceOf(TestClass)(new TestClass()); // true
 Is.InstanceOf(TestClass, 1); // false
 ```
 

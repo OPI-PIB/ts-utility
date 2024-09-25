@@ -33,7 +33,7 @@ export class Is {
 		return isOfType(OfType.regexp, value);
 	}
 
-	static array(value: unknown): value is any[] {
+	static array<T>(value: unknown): value is T[] {
 		return isOfType(OfType.array, value);
 	}
 
@@ -63,17 +63,7 @@ export class Is {
 		return url instanceof URL && (url.protocol === 'http:' || url.protocol === 'https:');
 	}
 
-	static instanceOf<T>(className: Newable<T>): (value: unknown) => value is T;
-
-	// eslint-disable-next-line no-dupe-class-members
-	static instanceOf<T>(className: Newable<T>, value: unknown): value is T;
-
-	// eslint-disable-next-line no-dupe-class-members
-	static instanceOf<T>(className: Newable<T>, value?: unknown) {
-		if (value === undefined) {
-			return (v: unknown): v is T => v instanceof className;
-		}
-
+	static instanceOf<T>(className: Newable<T>, value: unknown) {
 		return value instanceof className;
 	}
 }

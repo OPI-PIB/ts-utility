@@ -59,7 +59,7 @@ describe('Is', () => {
 	describe('function', () => {
 		it('function', () => {
 			// eslint-disable-next-line prefer-arrow-callback
-			expect(Is.function(function f() { })).toBe(true);
+			expect(Is.function(function f() {})).toBe(true);
 		});
 
 		it('arrow function', () => {
@@ -72,7 +72,7 @@ describe('Is', () => {
 		});
 
 		it('function ref', () => {
-			const fn = () => { };
+			const fn = () => {};
 			expect(Is.function(fn)).toBe(true);
 		});
 
@@ -109,11 +109,11 @@ describe('Is', () => {
 		});
 
 		it('function', () => {
-			expect(Is.object(() => { })).toBe(false);
+			expect(Is.object(() => {})).toBe(false);
 		});
 
 		it('arrow function', () => {
-			expect(Is.object(() => { })).toBe(false);
+			expect(Is.object(() => {})).toBe(false);
 		});
 
 		it('new function', () => {
@@ -122,7 +122,7 @@ describe('Is', () => {
 		});
 
 		it('function ref', () => {
-			const fn = () => { };
+			const fn = () => {};
 			expect(Is.object(fn)).toBe(false);
 		});
 
@@ -149,11 +149,11 @@ describe('Is', () => {
 		});
 
 		it('function', () => {
-			expect(Is.promise(() => { })).toBe(false);
+			expect(Is.promise(() => {})).toBe(false);
 		});
 
 		it('arrow function', () => {
-			expect(Is.promise(() => { })).toBe(false);
+			expect(Is.promise(() => {})).toBe(false);
 		});
 
 		it('new function', () => {
@@ -162,7 +162,7 @@ describe('Is', () => {
 		});
 
 		it('function ref', () => {
-			const fn = () => { };
+			const fn = () => {};
 			expect(Is.promise(fn)).toBe(false);
 		});
 
@@ -209,7 +209,7 @@ describe('Is', () => {
 			expect(Is.defined(0)).toBe(true);
 		});
 
-		it('\'\'', () => {
+		it("''", () => {
 			expect(Is.defined('')).toBe(true);
 		});
 	});
@@ -263,43 +263,39 @@ describe('Is', () => {
 	});
 
 	describe('instanceOf', () => {
-		class TestClass { }
+		class TestClass {}
 
 		it('class', () => {
 			expect(Is.instanceOf(TestClass, new TestClass())).toBe(true);
 		});
 
-		it('class curry', () => {
-			expect(Is.instanceOf(TestClass)(new TestClass())).toBe(true);
-		});
-
 		it('other class', () => {
-			class OtherTestClass { }
-			expect(Is.instanceOf(TestClass)(new OtherTestClass())).toBe(false);
+			class OtherTestClass {}
+			expect(Is.instanceOf(TestClass, new OtherTestClass())).toBe(false);
 		});
 
 		it('null', () => {
-			expect(Is.instanceOf(TestClass)(null)).toBe(false);
+			expect(Is.instanceOf(TestClass, null)).toBe(false);
 		});
 
 		it('undefined', () => {
-			expect(Is.instanceOf(TestClass)(undefined)).toBe(false);
+			expect(Is.instanceOf(TestClass, undefined)).toBe(false);
 		});
 
 		it('[]', () => {
-			expect(Is.instanceOf(TestClass)([])).toBe(false);
+			expect(Is.instanceOf(TestClass, [])).toBe(false);
 		});
 
 		it('Array', () => {
-			expect(Is.instanceOf(TestClass)(new Array(1))).toBe(false);
+			expect(Is.instanceOf(TestClass, new Array(1))).toBe(false);
 		});
 
 		it('number', () => {
-			expect(Is.instanceOf(TestClass)(1)).toBe(false);
+			expect(Is.instanceOf(TestClass, 1)).toBe(false);
 		});
 
 		it('string', () => {
-			expect(Is.instanceOf(TestClass)('')).toBe(false);
+			expect(Is.instanceOf(TestClass, '')).toBe(false);
 		});
 	});
 });
