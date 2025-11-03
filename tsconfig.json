@@ -1,16 +1,17 @@
 {
 	"compilerOptions": {
-		"incremental": true,
+		"incremental": false,
 		"removeComments": true,
 		"preserveConstEnums": true,
-		"sourceMap": true,
+		"sourceMap": false,
 		"strict": true,
 		"noImplicitReturns": true,
 		"moduleResolution": "node",
 		"stripInternal": true,
-		"noEmit": true,
 		"lib": ["esnext", "dom"],
 		"target": "esnext",
-		"baseUrl": "."
-	}
+		"baseUrl": ".",
+		"declaration": false
+	},
+	"exclude": ["node_modules", "dist", "src/**/*.spec.ts"]
 }

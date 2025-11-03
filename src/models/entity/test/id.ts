@@ -1,4 +1,5 @@
 import { ValueObject } from '../../..';
+
 import { IdProps } from './id.props';
 
 export class Id extends ValueObject<IdProps> {

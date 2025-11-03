@@ -1,5 +1,6 @@
-// eslint-disable-next-line max-classes-per-file
-import { Is } from './is';
+import { describe, expect, it } from 'vitest';
+
+import { Is } from './is.js';
 
 describe('Is', () => {
 	it('date', () => {
@@ -23,7 +24,7 @@ describe('Is', () => {
 			expect(Is.regexp(/someRegularExpression/i)).toBe(true);
 		});
 
-		it('new Regexp', () => {
+		it('new RegExp', () => {
 			expect(Is.regexp(new RegExp('someRegularExpression', 'i'))).toBe(true);
 		});
 	});
@@ -58,7 +59,6 @@ describe('Is', () => {
 
 	describe('function', () => {
 		it('function', () => {
-			// eslint-disable-next-line prefer-arrow-callback
 			expect(Is.function(function f() {})).toBe(true);
 		});
 
@@ -66,8 +66,7 @@ describe('Is', () => {
 			expect(Is.function((x: unknown) => x)).toBe(true);
 		});
 
-		it('new function', () => {
-			// eslint-disable-next-line no-new-func
+		it('new Function', () => {
 			expect(Is.function(new Function())).toBe(true);
 		});
 
@@ -81,7 +80,6 @@ describe('Is', () => {
 		});
 
 		it('new object', () => {
-			// eslint-disable-next-line no-new-object
 			expect(Is.function(new Object())).toBe(false);
 		});
 
@@ -93,7 +91,7 @@ describe('Is', () => {
 			expect(Is.function(1)).toBe(false);
 		});
 
-		it('new promise', () => {
+		it('new Promise', () => {
 			expect(Is.function(new Promise(() => ''))).toBe(false);
 		});
 	});
@@ -104,7 +102,6 @@ describe('Is', () => {
 		});
 
 		it('new object', () => {
-			// eslint-disable-next-line no-new-object
 			expect(Is.object(new Object())).toBe(true);
 		});
 
@@ -116,8 +113,7 @@ describe('Is', () => {
 			expect(Is.object(() => {})).toBe(false);
 		});
 
-		it('new function', () => {
-			// eslint-disable-next-line no-new-func
+		it('new Function', () => {
 			expect(Is.object(new Function())).toBe(false);
 		});
 
@@ -138,13 +134,13 @@ describe('Is', () => {
 			expect(Is.object([])).toBe(false);
 		});
 
-		it('new promise', () => {
+		it('new Promise', () => {
 			expect(Is.object(new Promise(() => ''))).toBe(false);
 		});
 	});
 
 	describe('promise', () => {
-		it('new promise', () => {
+		it('new Promise', () => {
 			expect(Is.promise(new Promise(() => ''))).toBe(true);
 		});
 
@@ -156,8 +152,7 @@ describe('Is', () => {
 			expect(Is.promise(() => {})).toBe(false);
 		});
 
-		it('new function', () => {
-			// eslint-disable-next-line no-new-func
+		it('new Function', () => {
 			expect(Is.promise(new Function())).toBe(false);
 		});
 
@@ -171,7 +166,6 @@ describe('Is', () => {
 		});
 
 		it('new object', () => {
-			// eslint-disable-next-line no-new-object
 			expect(Is.promise(new Object())).toBe(false);
 		});
 
@@ -231,9 +225,7 @@ describe('Is', () => {
 			expect(Is.url('www.google.com')).toBe(false);
 		});
 
-		// eslint-disable-next-line no-script-url
 		it('javascript:void(0)', () => {
-			// eslint-disable-next-line no-script-url
 			expect(Is.url('javascript:void(0)')).toBe(false);
 		});
 

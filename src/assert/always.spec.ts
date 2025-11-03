@@ -1,4 +1,6 @@
-import { always } from './always';
+import { describe, expect, it } from 'vitest';
+
+import { always } from './always.js';
 
 describe('always()', () => {
 	it('evaluates booleans', () => {
@@ -7,6 +9,6 @@ describe('always()', () => {
 	});
 
 	it('complains when given an empty code.', () => {
-		expect(() => always(false, '')).toThrow(/code/gi);
+		expect(() => always(false, '')).toThrow(/code/i);
 	});
 });
