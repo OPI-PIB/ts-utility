@@ -14,7 +14,7 @@ export class SmartString {
 				}
 
 				return target[prop as keyof SmartString];
-			},
+			}
 		});
 	}
 
@@ -60,6 +60,5 @@ export class SmartString {
 		return new SmartString(removed.join(''));
 	}
 
-	// eslint-disable-next-line no-undef
 	[index: number]: string | undefined;
 }

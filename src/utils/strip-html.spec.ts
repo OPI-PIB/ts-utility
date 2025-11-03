@@ -1,8 +1,10 @@
-import { stripHtml } from './strip-html';
+import { describe, expect, it } from 'vitest';
+
+import { stripHtml } from './strip-html.js';
 
 describe('stripHtml', () => {
 	it('number', () => {
-		expect(() => stripHtml(0 as any)).toThrow('Provided value is not a string');
+		expect(() => stripHtml(0 as any)).toThrow(/Provided value is not a string/);
 	});
 
 	it('object', () => {
@@ -15,6 +17,8 @@ describe('stripHtml', () => {
 	});
 
 	it('html', () => {
-		expect(stripHtml('<h1>Title</h1> <p>content</p><img src="">')).toBe('Title content');
+		const input = '<h1>Title</h1> <p>content</p><img src="">';
+		const expected = 'Title content';
+		expect(stripHtml(input)).toBe(expected);
 	});
 });

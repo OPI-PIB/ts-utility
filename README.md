@@ -1,18 +1,18 @@
 # @opi_pib/ts-utility
 
--   [Install](#install)
--   [Assert](#assert)
-    -   [Usage](#usage)
-        -   [TypeScript](#typescript)
--   [Logic](#logic)
-    -   [Is](#is)
--   [Models](#models)
-    -   [Entity](#entity)
-    -   [Value object](#value-object)
--   [Types](#types)
-    -   [Maybe<T>](#maybet)
--   [Utils](#utils)
-    -   [stripHtml](#striphtml)
+- [Install](#install)
+- [Assert](#assert)
+  - [Usage](#usage)
+    - [TypeScript](#typescript)
+- [Logic](#logic)
+  - [Is](#is)
+- [Models](#models)
+  - [Entity](#entity)
+  - [Value object](#value-object)
+- [Types](#types)
+  - [Maybe<T>](#maybet)
+- [Utils](#utils)
+  - [stripHtml](#striphtml)
 
 ## Install
 
@@ -26,8 +26,8 @@ npm install @opi_pib/ts-utility
 
 ```typescript
 function add(x, y) {
-	always(typeof x === "number", "Argument 'x' has to be a number.");
-	always(typeof y === "number", "Argument 'y' has to be a number.");
+	always(typeof x === 'number', "Argument 'x' has to be a number.");
+	always(typeof y === 'number', "Argument 'y' has to be a number.");
 	return x + y;
 }
 ```
@@ -56,7 +56,7 @@ export declare function always(condition: boolean, code: string): asserts condit
 
 ```typescript
 const x: unknown = someUntypedFunction();
-always(typeof x === "string");
+always(typeof x === 'string');
 const y = x.toUpperCase(); // TypeScript knows that x must be a string, your IDE can suggest toUpperCase() method
 ```
 
@@ -69,7 +69,7 @@ Static methods of this class will check type of provided value
 ### Is.defined
 
 ```typescript
-Is.defined("123"); // true
+Is.defined('123'); // true
 Is.defined(null); // false
 Is.defined(undefined); // false
 ```
@@ -80,8 +80,8 @@ Checks if value is function
 
 ```typescript
 Is.function(() => {}); // true
-Is.function(""); // false
-Is.function(new Promise(() => "")); // false
+Is.function(''); // false
+Is.function(new Promise(() => '')); // false
 ```
 
 ### Is.instanceOf
@@ -102,7 +102,7 @@ Checks if value is object
 Is.object({}); // true
 Is.object([]); // false
 Is.object(() => {}); // false
-Is.object(new Promise(() => "")); // false
+Is.object(new Promise(() => '')); // false
 ```
 
 ### Is.promise
@@ -111,7 +111,7 @@ Checks if value is promise
 
 ```typescript
 Is.promise({}); // false
-Is.promise(new Promise(() => "")); // true
+Is.promise(new Promise(() => '')); // true
 ```
 
 ### Is.url
@@ -119,8 +119,8 @@ Is.promise(new Promise(() => "")); // true
 Checks if value is valid url
 
 ```typescript
-Is.url("www.google.com"); // false
-Is.url("https://google.com"); // true
+Is.url('www.google.com'); // false
+Is.url('https://google.com'); // true
 ```
 
 ### Other types
@@ -130,10 +130,10 @@ Checks if provided value is of provided type
 ```typescript
 Is.date(new Date()); // true
 Is.boolean(true); // true
-Is.string(""); // true
+Is.string(''); // true
 Is.null(null); // true
 Is.regexp(/someRegularExpression/i); // true
-Is.regexp(new RegExp("someRegularExpression", "i")); // true
+Is.regexp(new RegExp('someRegularExpression', 'i')); // true
 Is.array([]); // true
 Is.number(0); // true
 Is.number(NaN); // true
@@ -183,20 +183,20 @@ class TestedEntity extends Entity<TestedEntityProps> {
 	}
 }
 
-it("should equals by id", () => {
-	const id1 = Id.create("123");
-	const id2 = Id.create("123");
-	const a = TestedEntity.create({ id: id1, value: "example1" });
-	const b = TestedEntity.create({ id: id2, value: "example2" });
+it('should equals by id', () => {
+	const id1 = Id.create('123');
+	const id2 = Id.create('123');
+	const a = TestedEntity.create({ id: id1, value: 'example1' });
+	const b = TestedEntity.create({ id: id2, value: 'example2' });
 
 	expect(a.equals(b)).toBe(true);
 });
 
-it("should not equal if id1 not equals id2", () => {
-	const id1 = Id.create("123");
-	const id2 = Id.create("1234");
-	const a = TestedEntity.create({ id: id1, value: "example" });
-	const b = TestedEntity.create({ id: id2, value: "example" });
+it('should not equal if id1 not equals id2', () => {
+	const id1 = Id.create('123');
+	const id2 = Id.create('1234');
+	const a = TestedEntity.create({ id: id1, value: 'example' });
+	const b = TestedEntity.create({ id: id2, value: 'example' });
 
 	expect(a.equals(b)).toBe(false);
 });
@@ -226,16 +226,16 @@ class TestedValueObject extends ValueObject<TestedValueObjectProps> {
 	}
 }
 
-it("should equals by structure", () => {
-	const a = TestedValueObject.create("name", "cityName");
-	const b = TestedValueObject.create("name", "cityName");
+it('should equals by structure', () => {
+	const a = TestedValueObject.create('name', 'cityName');
+	const b = TestedValueObject.create('name', 'cityName');
 
 	expect(a.equals(b)).toBe(true);
 });
 
-it("should not equals if structure is different", () => {
-	const a = TestedValueObject.create("name", "cityName1");
-	const b = TestedValueObject.create("name", "cityName2");
+it('should not equals if structure is different', () => {
+	const a = TestedValueObject.create('name', 'cityName1');
+	const b = TestedValueObject.create('name', 'cityName2');
 
 	expect(a.equals(b)).toBe(false);
 });
@@ -255,8 +255,8 @@ interface Example {
 }
 
 const obj: Example = {
-	a: "string",
-	b: "maybeString",
+	a: 'string',
+	b: 'maybeString'
 };
 
 const { a, b } = obj;

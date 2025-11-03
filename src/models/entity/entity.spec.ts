@@ -1,5 +1,7 @@
-import { Entity } from './entity';
-import { Id } from './test/id';
+import { describe, expect, it } from 'vitest';
+
+import { Entity } from './entity.js';
+import { Id } from './test/id.js';
 
 interface TestedEntityDto {
 	id: Id;

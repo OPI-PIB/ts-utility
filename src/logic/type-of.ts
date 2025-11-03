@@ -7,7 +7,7 @@ export enum OfType {
 	string = 'string',
 	regexp = 'regexp',
 	array = 'array',
-	null = 'null',
+	null = 'null'
 }
 
 /**

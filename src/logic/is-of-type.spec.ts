@@ -1,5 +1,7 @@
-import { OfType } from './type-of';
-import { isOfType } from './is-of-type';
+import { describe, expect, it } from 'vitest';
+
+import { isOfType } from './is-of-type.js';
+import { OfType } from './type-of.js';
 
 describe('isOfType', () => {
 	it('date', () => {
@@ -27,7 +29,7 @@ describe('isOfType', () => {
 	});
 
 	it('function', () => {
-		expect(isOfType(OfType.function, () => { })).toBe(true);
+		expect(isOfType(OfType.function, () => {})).toBe(true);
 	});
 
 	it('arrow function', () => {

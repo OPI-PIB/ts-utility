@@ -1,12 +1,14 @@
-import { never } from './never';
+import { describe, expect, test } from 'vitest';
+
+import { never } from './never.js';
 
 describe('never()', () => {
-	it('evaluates booleans', () => {
+	test('evaluates booleans', () => {
 		expect(() => never(false, 'test')).not.toThrow();
 		expect(() => never(true, 'test')).toThrow();
 	});
 
-	it('complains when given an empty code.', () => {
-		expect(() => never(true, '')).toThrow(/code/gi);
+	test('complains when given an empty code.', () => {
+		expect(() => never(true, '')).toThrow(/code/i);
 	});
 });

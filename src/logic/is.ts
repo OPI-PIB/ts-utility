@@ -1,5 +1,7 @@
-import { isOfType } from './is-of-type';
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 import { Maybe } from '../types/maybe';
+
+import { isOfType } from './is-of-type.js';
 import { OfType } from './type-of';
 
 type Newable<T> = new (...args: any[]) => T;
