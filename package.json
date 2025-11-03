@@ -1,13 +1,13 @@
 {
 	"name": "@opi_pib/ts-utility",
-	"version": "2.3.0",
+	"version": "2.3.1",
 	"description": "Typescript utility",
 	"scripts": {
 		"prepare": "husky",
-		"#clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
-		"#build:cjs": "tsc --module CommonJS --outDir dist/cjs",
-		"#build:esm": "tsc --module ESNext --outDir dist/esm --declaration true --declarationDir dist/types",
-		"build": "npm run #clean && npm run #build:cjs && npm run #build:esm",
+		"clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
+		"build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+		"build:esm": "tsc --module ESNext --outDir dist/esm --declaration true --declarationDir dist/types",
+		"build": "npm run clean && npm run build:cjs && npm run build:esm",
 		"test": "vitest run",
 		"test:stryker": "stryker run"
 	},
@@ -47,6 +47,10 @@
 	],
 	"author": "Dawid Lubowiecki",
 	"license": "MIT",
+	"dependencies": {
+		"ramda": "^0.31.0",
+		"typescript": "^5.0.0"
+	},
 	"devDependencies": {
 		"@opi_pib/eslint-config-base": "^9.0.0",
 		"@opi_pib/prettier-config-base": "^1.0.0",
@@ -59,10 +63,6 @@
 		"lint-staged": "^16.0.0",
 		"tsx": "^4.0.0",
 		"vitest": "^4.0.0"
-	},
-	"dependencies": {
-		"ramda": "^0.31.0",
-		"typescript": "^5.0.0"
 	},
 	"repository": {
 		"type": "git",
