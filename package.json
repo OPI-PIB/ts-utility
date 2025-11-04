@@ -1,6 +1,6 @@
 {
 	"name": "@opi_pib/ts-utility",
-	"version": "2.3.1",
+	"version": "2.3.2",
 	"description": "Typescript utility",
 	"scripts": {
 		"prepare": "husky",
@@ -11,7 +11,6 @@
 		"test": "vitest run",
 		"test:stryker": "stryker run"
 	},
-	"type": "module",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
 	"types": "dist/types/index.d.ts",
